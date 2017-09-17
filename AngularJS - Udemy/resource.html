@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="loja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Resource</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/lib/angular.js"></script>
+    <script type="text/javascript" src="js/lib/angular-route.js"></script>
+    <script type="text/javascript" src="js/lib/angular-resource.js"></script>
+    <script type="text/javascript" src="js/resource.js"></script>
+
+</head>
+
+<body ng-controller="pessoaController">
+    <input type="text" ng-value="100" ng-model="codPessoa">
+    <hr>
+    <button ng-click="getPorId();">Buscar por ID</button>
+    <hr>
+    <button ng-click="getPorTodos();">Buscar todos</button>
+    <hr>
+    <button ng-click="salvarPessoa();">Salvar pessoa</button>
+    <hr>
+    <button ng-click="deletarPessoa();">Deletar pessoa</button>
+    <hr>
+
+    <h1>{{objetoPessoa}}</h1>
+</body>
+
+</html>

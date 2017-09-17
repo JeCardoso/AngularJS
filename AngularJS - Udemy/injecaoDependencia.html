@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="loja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Injecao de Dependencia</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/lib/angular.js"></script>
+    <script type="text/javascript" src="js/lib/angular-resource.js"></script>
+
+</head>
+
+<body>
+
+    <div ng-controller="primeiroUserController">
+        <h1>{{primeiro}}</h1>
+    </div>
+    <div ng-controller="todosUserController">
+        <h1>{{todos}}</h1>
+    </div>
+
+    <script type="text/javascript">
+        var app = angular.module('loja', ['ngResource']);
+
+        // Criar serviço
+        app.factory('UserService', function() {
+            var users = ["Ivete", "Alex", "Paulo"]; //virai do banco de dados
+
+            return { // métodos do servico
+                all: function() {
+                    return users;
+                },
+                primeiro: function() {
+                    return users[0];
+                }
+            };
+        });
+
+        // retornando o resultado para uma variavel
+        primeiroUserController = app.controller("primeiroUserController", function($scope, UserService) {
+            $scope.primeiro = UserService.primeiro();
+        });
+
+        //Injeção de dependencia
+        primeiroUserController.$inject = ["$scope", "UserService"];
+
+        // retornando o resultado para uma variavel
+        todosUserController = app.controller("todosUserController", function($scope, UserService) {
+            $scope.todos = UserService.all();
+        });
+
+        //Injeção de dependencia
+        todosUserController.$inject = ["$scope", "UserService"];
+
+    </script>
+</body>
+
+</html>

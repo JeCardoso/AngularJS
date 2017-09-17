@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Select</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/lib/angular.js"></script>
+    <script type="text/javascript" src="js/lib/angular-route.js"></script>
+    <script type="text/javascript" src="js/lib/angular-locale_pt-br.js"></script>
+
+</head>
+
+<body>
+
+    <input type="text" ng-model="moeda">
+    <h2>Moeda default: {{moeda | currency:"$"}}</h2>
+    <h2>Moeda real brasil: {{moeda | currency}}</h2>
+
+</body>
+
+</html>

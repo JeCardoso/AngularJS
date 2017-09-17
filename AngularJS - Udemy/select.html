@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="loja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Select</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/lib/angular.js"></script>
+    <script type="text/javascript" src="js/lib/angular-route.js"></script>
+    <script type="text/javascript" src="js/select.js"></script>
+
+</head>
+
+<body id="corpo">
+
+    <h1>Select em Branco Inicial</h1>
+    <div ng-controller="namesController">
+        <select name="" id="" ng-model="selectedName" ng-options="x for x in names"></select>
+    </div>
+    <br>
+
+    <h1>Primeiro select preenchido</h1>
+    <div ng-controller="namesController">
+        <select>
+            <option ng-repeat="pessoa in names">{{pessoa}}</option>
+        </select>
+    </div>
+    <br>
+
+    <div ng-controller="pegarRespostaJson">
+        <p>Selecione o nome:</p>
+        <select ng-model="nomeSelecionado">
+            <option ng-repeat="pessoa in lista" value="{{pessoa.nome}}">{{pessoa.nome}}</option>
+        </select>
+
+        <h2>Selecionado: {{nomeSelecionado}}</h2>
+    </div>
+
+    <div ng-controller="pegarRespostaJson">
+        <p>Selecione o indice:</p>
+        <select ng-model="selecionado" ng-options="x for (x,y) in lista">
+        </select>
+
+        <h2>Nome: {{selecionado.nome}}</h2>
+        <h2>Cidade: {{selecionado.cidade}}</h2>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="loja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTTP</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/lib/angular.js"></script>
+    <script type="text/javascript" src="js/lib/angular-route.js"></script>
+    <script type="text/javascript" src="js/http.js"></script>
+
+</head>
+
+<body>
+
+    <h1>Trabalhando com servidor 1</h1>
+    <button ng-click="pegarResposta();" ng-controller="pegarResposta">Pegar resposta servidor</button>
+    <input type="text" id="resposta">
+
+    <p>Trabalhando com servidor 2</p>
+    <button ng-click="pegarResposta2();" ng-controller="pegarResposta2">Pegar resposta servidor 2</button>
+    <input type="text" id="resposta2">
+    <input type="text" id="resposta3">
+    <input type="text" id="resposta4">
+
+    <p>Trabalhando com erro de servidor</p>
+    <button ng-controller="pegarRespostaErro" ng-click="pegarRespostaErro();">Pegar resposta de erro</button>
+    <input type="text" id="respostaErro">
+
+    <h1>Trabalhando com JSON</h1>
+    <div ng-controller="pegarRespostaJson">
+        <ul>
+            <li ng-repeat="pessoa in lista">{{pessoa.nome + ' - ' + pessoa.cidade}}</li>
+        </ul>
+    </div>
+    <br>
+    <br>
+
+    <h1>Listas de Dados</h1>
+
+    <div ng-controller="pegarRespostaJson">
+        <table>
+            <tr ng-repeat="pessoa in lista">
+                <td>{{pessoa.nome}}</td>
+                <td>{{pessoa.cidade}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <br>
+
+    <h1>Dados ordenados</h1>
+    <div ng-controller="pegarRespostaJson">
+        <table>
+            <tr ng-repeat="pessoa in lista | orderBy:'cidade'">
+                <td>{{pessoa.nome}}</td>
+                <td>{{pessoa.cidade}}</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+
+    <h1>Maiúsculo</h1>
+    <div ng-controller="pegarRespostaJson">
+        <table>
+            <tr ng-repeat="pessoa in lista | uppercase">
+                <td>{{pessoa.nome}}</td>
+                <td>{{pessoa.cidade}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <h1>Indice</h1>
+    <div ng-controller="pegarRespostaJson">
+        <table>
+            <tr ng-repeat="pessoa in lista">
+                <td>{{$index + 1}}</td>
+                <td>{{pessoa.nome}}</td>
+                <td>{{pessoa.cidade}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <h1>Colorido</h1>
+    <div ng-controller="pegarRespostaJson">
+        <table>
+            <tr ng-repeat="pessoa in lista">
+                <td ng-if="$odd" style="background-color:lime;">{{pessoa.nome}}</td>
+                <td ng-if="$even">{{pessoa.nome}}</td>
+                <td ng-if="$odd" style="background-color:lime;">{{pessoa.cidade}}</td>
+                <td ng-if="$even">{{pessoa.cidade}}</td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>

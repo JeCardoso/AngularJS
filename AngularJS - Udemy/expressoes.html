@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Expressões</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/lib/angular.js"></script>
+    <script type="text/javascript" src="js/lib/angular-route.js"></script>
+    <script type="text/javascript" src="js/directives.js"></script>
+
+</head>
+
+<body>
+
+    <h1>Expressão Soma</h1>
+    <p>{{5 + 5}}</p>
+
+    <h1>Expressão Init Reaproveitamento</h1>
+    <div ng-init="myCol='red'">
+        <input style="background-color: {{myCol}}" ng-model="myCol" value="{{myCol}}" />
+    </div>
+
+    <h1>Expressão 3</h1>
+    <div ng-init="valor=2;cota=5">
+        <p>Total em dolar: {{valor * cota}}</p>
+    </div>
+
+    <h1>Expressão 4</h1>
+    <div ng-init="quantity=1;cost=5">
+        <p>Total em dolar: <span ng-bind="quantity * cost"></span> </p>
+    </div>
+
+    <h1>Expressão Strings</h1>
+    <div ng-init="firstName='Jean';lastName='Ernesto'">
+        <p>Meu nome é: {{firstName + " " + lastName}}</p>
+        <p>Meu nome é: <span ng-bind="firstName + ' ' + lastName"></span></p>
+    </div>
+
+    <h1>Angular Objetos</h1>
+    <div ng-init="person={firstName:'Jean', lastName:'Ernesto'}">
+        <p>Meu nome é: {{person.firstName + " " + person.lastName}}</p>
+        <p>Meu nome é: <span ng-bind="person.firstName + ' ' + person.lastName"></span></p>
+    </div>
+
+    <h1>Angular Arrays</h1>
+    <div ng-init="points=[1, 15, 19, 2, 40]">
+        <p>Valor: {{points[2]}}</p>
+        <p>Valor: <span ng-bind="points[2] * 2"></span></p>
+    </div>
+
+
+    <div ng-app="loja">
+        <w3-test-directive></w3-test-directive>
+    </div>
+
+</body>
+
+</html>
