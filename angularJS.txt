@@ -1,11 +1,11 @@
-AngularJS 1.x
+ÔªøAngularJS 1.x
 ************************************************************
 
-Diretivas: Extensıes de atributos HTML com a extens„o "ng". Que s„o aplicadadas em elementos do DOM dando comportamentos especificos.
+Diretivas: Extens√µes de atributos HTML com a extens√£o "ng". Que s√£o aplicadadas em elementos do DOM dando comportamentos especificos.
 
-Criar prÛpria diretiva
+Criar pr√≥pria diretiva
 
-tipo de atributos HTML que devam receber essa directivas, restrict (por padr„o 'E' e 'A')
+tipo de atributos HTML que devam receber essa directivas, restrict (por padr√£o 'E' e 'A')
 [E - elemento HTML: <nome-diretiva></nome-diretiva>,
  A - atributo html: <div nome-diretiva="exp"></div>,
  C - Classe: <div class="nome-diretiva: exp;"></div>
@@ -13,15 +13,15 @@ tipo de atributos HTML que devam receber essa directivas, restrict (por padr„o '
 
 Apelido de controller -> primeiroController as user
 
-ng-app = qual sua aplicaÁ„o e elemento raiz dela.
+ng-app = qual sua aplica√ß√£o e elemento raiz dela.
 
-ng-init="meuNome='Jean'" = inicia uma vari·vel com esse valor
+ng-init="meuNome='Jean'" = inicia uma vari√°vel com esse valor
 
-ng-controller="NOMe" = adiciona uma diretiva a nossas views, liga um controller a uma p·gina, realiza toda logica associada.
+ng-controller="NOMe" = adiciona uma diretiva a nossas views, liga um controller a uma p√°gina, realiza toda logica associada.
 
-$scope = elemento de ligaÁ„o entre a tela e o controller
+$scope = elemento de liga√ß√£o entre a tela e o controller
 
-{{nome}} = procura o valor de uma vari·vel no scope
+{{nome}} = procura o valor de uma vari√°vel no scope
 
 ng-show = exibe um elemento HTML na tela caso a expressao seja verdadeira
 
@@ -29,16 +29,16 @@ ng-hide="iniciado" esconde caso seja verdadeira
 
 ng-if="iniciado" remove elemento do DOM caso expressao seja verdadeira
 
-ng-repeat="elemento in vetor" = repetiÁ„o de um elemento HTML para cada elemento de uma coleÁ„o
+ng-repeat="elemento in vetor" = repeti√ß√£o de um elemento HTML para cada elemento de uma cole√ß√£o
 
 ng-click="finalizar()" = atribui um comportamento ao elemento ao ser clicado
 
 ng-class="{'classe1':condicao;'classe2':condicao}" = aplica uma classe CSS ao elemento caso a condicao seja atendida
 
 
-ng-model="propriedade" - faz a ligaÁ„o(binding) do $scope do controller com a view
+ng-model="propriedade" - faz a liga√ß√£o(binding) do $scope do controller com a view
 
-Two-way-binding = atualizaÁ„o em tempo real das variaveis contidas no controller
+Two-way-binding = atualiza√ß√£o em tempo real das variaveis contidas no controller
 
 ng-readonly="expressao" -> torna o campo readonly se true
 
@@ -48,9 +48,9 @@ ng-maxlength="integer" or ng-minlength="integer" -> quantidade maxima de caracte
 
 ng-pattern="padrao" -> valida utilizando expressoes regulares
 
-atributo $valid = indica ao angular se o form È valido retornando um boolean
+atributo $valid = indica ao angular se o form √© valido retornando um boolean
 
-filters - s„o funÁıes transformativas do angular que podem ser aplicadas em expressoes tanto na view quanto nos controllers
+filters - s√£o fun√ß√µes transformativas do angular que podem ser aplicadas em expressoes tanto na view quanto nos controllers
 
 Filtro Currency
 Na View -> {{expressao|currency:'simbolomonetario': quantidade de zeros}}
@@ -60,7 +60,7 @@ Filtro Date
 Na View -> {{expressao | date:formato:timezone}}
 No Controller -> $filter('date')(expressao,formato,timezone)
 
-Filter Colecoes - extrai subsÈries de coleÁıes
+Filter Colecoes - extrai subs√©ries de cole√ß√µes
 Na View -> {{colecao | filter:valor}}
 No Controller -> $filter('filter')(colecao, valor)  
 
@@ -73,14 +73,14 @@ atributo "name" do form no $scope para ser acessivel no controller, o Angular cr
 
 ************************************************************
 
-InjeÁ„o de Dependencias - È um padr„o de projeto que trata a forma como seus componentes obteem a dependencia, componentes dependem de outros componentes e de alguma forma devem estar disponiveis pra ele quando necessitar.
+Inje√ß√£o de Dependencias - √© um padr√£o de projeto que trata a forma como seus componentes obteem a dependencia, componentes dependem de outros componentes e de alguma forma devem estar disponiveis pra ele quando necessitar.
 
 SERVICES
-S„o elementos que tem a unica funÁ„o utilizados para atender a uma necessidade especifica da aplicaÁ„o, uma das pricipais utilidade È a reutilizacao em controllers. Verifica se est· criado, caso contrario cria, s„o Singletons, possuem uma instancia unica em todo sistema.
+S√£o elementos que tem a unica fun√ß√£o utilizados para atender a uma necessidade especifica da aplica√ß√£o, uma das pricipais utilidade √© a reutilizacao em controllers. Verifica se est√° criado, caso contrario cria, s√£o Singletons, possuem uma instancia unica em todo sistema.
 
-Services padrıes: $filter, $http, $resource, $window, $rootScope, $location
+Services padr√µes: $filter, $http, $resource, $window, $rootScope, $location
 
-$filter -> capaz de aplicar funÁıes de transformaÁ„o
+$filter -> capaz de aplicar fun√ß√µes de transforma√ß√£o
 
 $http -> capaz de fazer requisicoes http para servidores backend($http.get, $http.head, $http.post, $http.put, $http.delete).
 
@@ -93,27 +93,27 @@ $http.get('/url').then(function(response){
 response.status; - status da resposta
 response.data; - dados da resposta
 
-ServiÁos REST - chamada http que tem como resposta um JSON de dados
+Servi√ßos REST - chamada http que tem como resposta um JSON de dados
 
-ng-resource - utilizado para fazer a comunicaÁ„o com serviÁos REST, proporcionando mÈtodos de mais alto nivel que http, n„o vem por padr„o com o angular
+ng-resource - utilizado para fazer a comunica√ß√£o com servi√ßos REST, proporcionando m√©todos de mais alto nivel que http, n√£o vem por padr√£o com o angular
 ************************************************************
 
-Routing - dispositivo de navegabilidade, que gerencia a navegaÁ„o entre estados e identificando qual p·gina sera exibida.
-Utiliza a substituiÁ„o de templates, somente partes especificas da aplicaÁ„o s„o recarregadas
-No primeiro load a maioria da aplicacao È carregada, depois apenas partes da aplicacao.
-Cada p·gina È representada por um estado sendo a pagina inicial o estado inicial, navegacao seria a mudanÁa de um estado X para um estado Y
+Routing - dispositivo de navegabilidade, que gerencia a navega√ß√£o entre estados e identificando qual p√°gina sera exibida.
+Utiliza a substitui√ß√£o de templates, somente partes especificas da aplica√ß√£o s√£o recarregadas
+No primeiro load a maioria da aplicacao √© carregada, depois apenas partes da aplicacao.
+Cada p√°gina √© representada por um estado sendo a pagina inicial o estado inicial, navegacao seria a mudan√ßa de um estado X para um estado Y
 
 Estado:{nome do estado,
-html da p·gina do estado,
+html da p√°gina do estado,
 URL do estado}
 
 ui-view -> diretiva que o $stateProvider usa para mostrar a view de acordo com um estado dado
 
-app.run() -> mÈtodo usado para quado a aplicacao rodar
+app.run() -> m√©todo usado para quado a aplicacao rodar
 
 ************************************************************
 
-ng-view -> tag representa o ponto que ser· substituido
+ng-view -> tag representa o ponto que ser√° substituido
 
 $location.path('/') -> redireciona para uma rota
-$routeParams s„o os parametros passados pela url
+$routeParams s√£o os parametros passados pela url
